@@ -1,42 +1,248 @@
+/* =========================
+   Dark Theme – Obsidian
+========================= */
+:root {
+  /* Font */
+  font-family: "Stack Sans Headline";
+
+  /* Color palette */
+  --obsidian: #22211F;
+  --gunmetal: #5C5B58;
+  --marble:   #A9A6A2;
+  --cloudy:   #E5E3E0;
+  --silver:   #F7F6F5;
+  
+
+  /* Theme tokens */
+  --bg: var(--obsidian);
+  --surface: #2B2A28; /* slightly lifted from bg */
+  --text: var(--silver);
+  --muted: var(--marble);
+  --border: rgba(247, 246, 245, 0.12);
+
+  color-scheme: dark;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+/* =========================
+   Base Layout
+========================= */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding-inline: 40px;
+  margin: 40px auto;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* =========================
+   Typography
+========================= */
+h1 {
+  font-size: clamp(2.2rem, 3vw, 3rem);
+  font-weight: 500;
+  margin-bottom: 24px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h2 {
+  font-weight: 400;
+  margin-bottom: 4px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+h3 {
+  font-weight: 300;
+  color: var(--muted);
+  margin: 0;
 }
+
+p {
+  font-weight: 300;
+  color: var(--muted);
+  margin: 0; 
+}
+
+/* =========================
+   Grid & Cards
+========================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 20px;
+  min-width: 100%;
+}
+
 
 .card {
-  padding: 2em;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: 28px;
+  transition: transform 0.15s ease, border-color 0.2s ease;
 }
 
-.read-the-docs {
-  color: #888;
+.card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(247, 246, 245, 0.25);
+}
+
+.card h2 {
+  margin-top: 6px;   /* smaller gap from tag */
+  margin-bottom: 10px;
+}
+
+.role-tag {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+/* =========================
+   Image Placeholder
+========================= */
+.avatar {
+  width: 100%;
+  height: 220px;
+  margin-top: 14px;
+  border-radius: 5px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+
+
+/* =========================
+   Links
+========================= */
+a {
+  color: var(--cloudy);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--silver);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* =========================
+   Role Tags (Pills)
+========================= */
+.role-tag {
+  display: inline-block;
+  padding: 2px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  margin-top: 6px;
+}
+
+/* Leader – green */
+.role-tag.leader {
+  color: #2E7D32;
+  background-color: rgba(46, 125, 50, 0.15);
+  border: 1px solid #2E7D32;
+}
+
+/* Presenter – blue */
+.role-tag.presenter {
+  color: #2563EB;
+  background-color: rgba(37, 99, 235, 0.15);
+  border: 1px solid #2563EB;
+}
+
+/* Member – neutral grey */
+.role-tag.member {
+  color: var(--marble);
+  background-color: rgba(169, 166, 162, 0.15);
+  border: 1px solid rgba(169, 166, 162, 0.6);
+}
+
+
+/* Smooth scroll to anchors */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px; /* so sections aren't hidden behind navbar */
+}
+
+/* =========================
+   Navbar
+========================= */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(34, 33, 31, 0.75); /* obsidian w/ transparency */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.nav-brand {
+  font-weight: 600;
+  color: var(--silver);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  color: var(--cloudy);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.nav-links a:hover {
+  border-color: rgba(247, 246, 245, 0.18);
+  background: rgba(247, 246, 245, 0.06);
+  color: var(--silver);
+}
+
+/* =========================
+   Sections
+========================= */
+.section {
+  padding: 42px 0;
+  border-bottom: 1px solid rgba(247, 246, 245, 0.08);
+}
+
+.section-text {
+  color: var(--muted);
+  max-width: 70ch;
+}
+
+.resource-list {
+  margin: 12px 0 0;
+  padding-left: 18px;
+}
+
+.resource-list a {
+  color: var(--cloudy);
+}
+.resource-list a:hover {
+  color: var(--silver);
 }
