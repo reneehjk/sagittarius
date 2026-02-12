@@ -250,3 +250,49 @@ html {
 .resource-list a:hover {
   color: var(--silver);
 }
+
+.assignment-grid {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.assignment-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.assignment-card:hover {
+  transform: scale(1.05);
+}
+
+.assignment-icon {
+  font-size: 80px;
+}
+
+.assignment-label {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.coming-soon {
+  font-size: 14px;
+  opacity: 0.6;
+  margin-top: 5px;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.disabled:hover {
+  transform: none;
+}

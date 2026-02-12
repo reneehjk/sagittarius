@@ -38,11 +38,32 @@ export default function App() {
 
       {/* ASSIGNMENTS */}
       <section id="a1" className="section">
-        <h2>Assignment 1</h2>
-        <p className="section-text">
-          Coming soon...
-        </p>
-      </section>
+  <h2>Assignment 1</h2>
+
+  <div className="assignment-grid">
+
+    {/* REPORT */}
+    <a
+      href="https://drive.google.com/file/d/15_h26OOueXsYWW4ekGGtNhGcmZAXEB_T/view?usp=sharing"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="assignment-card"
+    >
+      <div className="assignment-icon">📄</div>
+      <div className="assignment-label">Report</div>
+    </a>
+
+    {/* SLIDES PLACEHOLDER */}
+    <div className="assignment-card disabled">
+      <div className="assignment-icon">🖥️</div>
+      <div className="assignment-label">Slides</div>
+      <div className="coming-soon">Coming Soon</div>
+    </div>
+
+  </div>
+</section>
+
+
 
       <section id="a2" className="section">
         <h2>Assignment 2</h2>
