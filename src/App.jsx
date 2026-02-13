@@ -52,14 +52,16 @@ export default function App() {
             <div className="assignment-icon">📄</div>
             <div className="assignment-label">Report</div>
           </a>
-
-          {/* SLIDES PLACEHOLDER */}
-          <div className="assignment-card disabled">
+          <a
+            href=" https://drive.google.com/file/d/1cO1OABwBqnzjo0XxRus52rjr0tlXQhtL/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="assignment-card"
+          >
             <div className="assignment-icon">🎬</div>
             <div className="assignment-label">Slides</div>
-            <div className="coming-soon">Coming Soon</div>
-          </div>
-
+          </a>
+         
         </div>
       </section>
 
